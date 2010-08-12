@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<title>Checkmate jQuery Plugin - Mirror Checkbox Selections</title>
+<!-- js -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script> 
+<script tpe="text/javascript" src="checkmate.js"></script>
+<script>
+	$(document).ready(function() {
+
+		$('input.mirrorcontrol').click(function(){
+				$(this).checkmate();
+			});	
+
+	});
+</script>
+</head>
+
+<body>
+<p><strong>This is handy to mirror a fake set of checkbox selection attributes to other inputs.</strong><br />
+<em>For instance, to manipulate a set of form inputs from outside the form.</em></p>
+
+<p>Click any checkbox in the controller set. The related checkbox in the target set should mirror it's status.</p>
+
+</ol>
+
+Controller:
+<input type="checkbox" val="1" class="mirrorcontrol" id="fake_item1" name="item1" />
+<input type="checkbox" val="2" class="mirrorcontrol" id="fake_item2" name="item2" />
+<input type="checkbox" val="3" class="mirrorcontrol" id="fake_item3" name="item3" />
+<input type="checkbox" val="4" class="mirrorcontrol" id="fake_item4" name="item4" />
+<br /><br />
+<form>
+Target:
+	<input type="checkbox" val="1" id="item1" name="item1" />
+	<input type="checkbox" val="2" id="item2" name="item2" />
+	<input type="checkbox" val="3" id="item3" name="item3" />
+	<input type="checkbox" val="4" id="item4" name="item4" />
+</form>
+
+<br /><br />
+To use:
+<ul>
+	<li>jQuery + the checkmate plugin</li>
+	<li>Make sure your "fake" inputs have the class <code>mirrorcontrol</code></li>
+	<li>Make sure that your "fake" inputs and your "real" inputs have the same <code>name</code> attribute</li>
+	<li>Bing the <code>checkmate()</code> function to a clickhandler on your "fake" inputs</li>
+</ul>
+
+</body>
+</html>
