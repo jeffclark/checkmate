@@ -8,7 +8,7 @@
 <script>
 	$(document).ready(function() {
 
-		$('input.mirrorcontrol').click(function(){
+		$('input.control').click(function(){
 				$(this).checkmate();
 			});	
 
@@ -25,26 +25,32 @@
 </ol>
 
 Controller:
-<input type="checkbox" val="1" class="mirrorcontrol" id="fake_item1" name="item1" />
-<input type="checkbox" val="2" class="mirrorcontrol" id="fake_item2" name="item2" />
-<input type="checkbox" val="3" class="mirrorcontrol" id="fake_item3" name="item3" />
-<input type="checkbox" val="4" class="mirrorcontrol" id="fake_item4" name="item4" />
+<input type="checkbox" val="1" class="control" name="item1" />
+<input type="checkbox" val="2" class="control" name="item2" />
+<input type="checkbox" val="3" class="control" name="item3" />
+<input type="checkbox" val="4" class="control" name="item4" />
 <br /><br />
 <form>
 Target:
-	<input type="checkbox" val="1" id="item1" name="item1" />
-	<input type="checkbox" val="2" id="item2" name="item2" />
-	<input type="checkbox" val="3" id="item3" name="item3" />
-	<input type="checkbox" val="4" id="item4" name="item4" />
+	<input type="checkbox" val="1" name="item1" disabled />
+	<input type="checkbox" val="2" name="item2" disabled />
+	<input type="checkbox" val="3" name="item3" disabled />
+	<input type="checkbox" val="4" name="item4" disabled />
 </form>
 
 <br /><br />
 To use:
 <ul>
-	<li>jQuery + the checkmate plugin</li>
-	<li>Make sure your "fake" inputs have the class <code>mirrorcontrol</code></li>
+	<li>Make sure you jQuery + the checkmate plugin</li>
 	<li>Make sure that your "fake" inputs and your "real" inputs have the same <code>name</code> attribute</li>
-	<li>Bing the <code>checkmate()</code> function to a clickhandler on your "fake" inputs</li>
+	<li>Give your all of your "fake" inputs the same class. In this demo, I used "control".</li>
+	<li>Attach the <code>checkmate()</code> function to a clickhandler on your "fake" inputs:<br />
+		<code>
+				$('input.control').click(function(){
+				$(this).checkmate();
+			});	
+		</code>
+		</li>
 </ul>
 
 </body>

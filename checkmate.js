@@ -1,14 +1,12 @@
 (function($) {
 	$.fn.checkmate = function(){
-		var matchmaker = $(this).attr('name');
-		var checkedstatus = $('input[name=' + matchmaker + '].mirrorcontrol').attr('checked');
-		var target = $('input[name=' + matchmaker + ']');
+		var matchmaker = $(this).attr('name'); // name of the control item
+		var controller = $(this).attr('class'); // class of the control item
 
-		if (checkedstatus == true) {
-			target.attr('checked',true);
-		} else {				
-			target.attr('checked',false);
-		}	
+		var checkedstatus = $('input[name=' + matchmaker + '].' + controller).attr('checked'); // is the controller checked or not?
+		var target = $('input[name=' + matchmaker + ']'); // grab the "real" input
+
+		target.attr('checked',checkedstatus);
 	
 	};
 })(jQuery);
