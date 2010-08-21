@@ -8,8 +8,8 @@ Handy for use if you have input fields outside of the form (for whatever reason)
 
 To use:
 * Make sure jQuery + the checkmate plugin are loaded in your page
-* Give all of your "fake" inputs the class mirrorcontrol
 * Make sure that your "fake" inputs and your "real" inputs have the same "name" attribute
+* give all of your "fake" inputs the same class. In this demo, I used "control"
 * Add the checkmate() function to a clickhandler on your "fake" inputs
 
 Check the demo file in the repo for an example.
